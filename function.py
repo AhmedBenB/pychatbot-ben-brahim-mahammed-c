@@ -111,5 +111,5 @@ def calculer_score_idf(repertoire_corpus):
    return score_idf
 
 
-def fon():
-    ...
+#def fon():
+  #  ...
