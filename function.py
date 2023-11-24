@@ -43,7 +43,7 @@ print(noms_famille_presidents)
 
 
 # function.py
-def afficher_president_par_indice(indice):
+def prenom(indice):
     lst_nom = ['Chirac', 'dEstaing', 'Hollande', 'Macron', 'Mitterrand', 'Sarkozy']
 
     if 0 <= indice < len(lst_nom):
@@ -82,9 +82,9 @@ def minus(nom_fichier):
                if ascii == 45 or ascii == 39:
                    modification += " "
            f2.write(modification)
+
+
 def compter_motsTF(chaine):
-
-
    mots = chaine.split()
    compte_mots = {}
 
@@ -121,5 +121,5 @@ def calculer_score_idf(repertoire_corpus):
    return score_idf
 
 
-#def fon():
-  #  ...
+def tfidf():
+     ...

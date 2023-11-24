@@ -12,8 +12,8 @@ if __name__ == '__main__':
        print(noms_famille_presidents)
 
    elif num == 2 :
-       indice_utilisateur = int(input("Entrez un indice : "))
-       afficher_president_par_indice(indice_utilisateur)
+       Indice = int(input("Entrez un indice : "))
+       prenom(Indice)
 
    elif num == 3:
        for i in range(len(files_names)):
