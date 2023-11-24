@@ -42,21 +42,31 @@ noms_famille_presidents = list(resultats.keys())
 print(noms_famille_presidents)
 
 
-def prenom_president(prenom):
-   lst_nom = ['Chirac', 'dEstaing', 'Hollande', 'Macron', 'Mitterrand', 'Sarkozy']
-   prenom = ""
-   if lst_nom[0] == "Chirac":
-       prenom = 'Jacques'
-   elif lst_nom[1] == "dEstaing":
-       prenom = 'Valéry Giscard'
-   elif lst_nom[2] == "Hollande":
-       prenom = 'François'
-   elif lst_nom[3] == "Macron":
-       prenom = 'Emmanuel'
-   elif lst_nom[4] == "Mitterrand":
-       prenom = 'François'
-   elif lst_nom[5] == "Sarkozy":
-       prenom = 'Nicolas'
+# function.py
+def afficher_president_par_indice(indice):
+    lst_nom = ['Chirac', 'dEstaing', 'Hollande', 'Macron', 'Mitterrand', 'Sarkozy']
+
+    if 0 <= indice < len(lst_nom):
+        nom = lst_nom[indice]
+        prenom = ""
+
+        if nom == "Chirac":
+            prenom = 'Jacques'
+        elif nom == "dEstaing":
+            prenom = 'Valéry Giscard'
+        elif nom == "Hollande":
+            prenom = 'François'
+        elif nom == "Macron":
+            prenom = 'Emmanuel'
+        elif nom == "Mitterrand":
+            prenom = 'François'
+        elif nom == "Sarkozy":
+            prenom = 'Nicolas'
+
+        print(f"Nom : {nom}, prénom : {prenom}")
+    else:
+        print("Indice invalide")
+
 
 
 def minus(nom_fichier):

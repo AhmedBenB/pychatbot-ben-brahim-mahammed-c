@@ -11,8 +11,11 @@ if __name__ == '__main__':
        noms_famille_presidents = list(resultats.keys())
        print(noms_famille_presidents)
 
+   elif num == 2 :
+       indice_utilisateur = int(input("Entrez un indice : "))
+       afficher_president_par_indice(indice_utilisateur)
 
-   elif num == 2:
+   elif num == 3:
        for i in range(len(files_names)):
            minus(files_names[i])
 
