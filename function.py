@@ -106,7 +106,7 @@ def calculer_score_idf(repertoire_corpus):
                    nb_documents_contenant_mot[mot] = nb_documents_contenant_mot.get(mot, 0) + 1
 
 
-   score_idf = {mot: math.log(nb_total_documents / (1 + nb_documents_contenant_mot[mot])) for mot in nb_documents_contenant_mot}
+   score_idf = {mot: math.log(nb_total_documents / (nb_documents_contenant_mot[mot])) for mot in nb_documents_contenant_mot}
 
    return score_idf
 
