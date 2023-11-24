@@ -34,7 +34,7 @@ def extraire_noms_presidents(repertoire):
    return noms_presidents
 
 
-chemin_repertoire = "C:/Users/PC/PycharmProjects/pychatbot-ben-brahim-mahammed-c/speeches"
+chemin_repertoire = "./speeches"
 resultats = extraire_noms_presidents(chemin_repertoire)
 
 

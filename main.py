@@ -1,7 +1,7 @@
 from function import *
 if __name__ == '__main__':
    num = int(input("Saisir numéro de la fonction : "))
-   chemin_repertoire = "C:/Users/PC/PycharmProjects/pychatbot-ben-brahim-mahammed-c/speeches"
+   chemin_repertoire = "./speeches"
    resultats = extraire_noms_presidents(chemin_repertoire)
    """print(resultats)"""
    directory = "./speeches"
@@ -24,11 +24,6 @@ if __name__ == '__main__':
 
 
    elif num == 4 :
-       repertoire_corpus = "C:/Users/PC/PycharmProjects/pychatbot-ben-brahim-mahammed-c/cleaned"
+       repertoire_corpus = "./cleaned"
        resultat_idf = calculer_score_idf(repertoire_corpus)
        print(resultat_idf)
-
-
-
-
-
