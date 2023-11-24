@@ -30,3 +30,5 @@ if __name__ == '__main__':
        repertoire_corpus = "./cleaned"
        resultat_idf = calculer_score_idf(repertoire_corpus)
        print(resultat_idf)
+   elif num == 5 :
+       ...
