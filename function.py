@@ -205,8 +205,8 @@ def mots_non_importants(matrice_tfidf):
 
     for ligne in matrice_tfidf:
         for i in range(1, len(ligne)):
-           tfidf_scores += float(ligne[i][0])
-        if (tfidf_scores / (len(ligne)-1) )==0:
+           tfidf_scores += float(ligne[i][1:])
+        if (tfidf_scores / (len(ligne)-1) ) == 0:
             mots_non_importants.append(ligne[0])
         tfidf_scores = 0
     return mots_non_importants

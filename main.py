@@ -4,9 +4,12 @@ if __name__ == '__main__':
    print("Si vous voulez afficher les noms des présidents sous la forme d'une Liste 1D taper 1 sur la console")
    print("Si vous voulez afficher les noms et prénoms d'un président, taper 2 sur la console, puis taper un indice entre 0 et 5 compris")
    print("Si vous voulez connaitre le nombre de fois pour lequel chaque mot est présent dans une phrase taper 4")
-   print("Si vous voulez connaitre le score IDF de tous les mots les moins utiliser taper 5")
+   print("Si vous voulez connaitre le score IDF de tous les mots les moins utilisés taper 5")
    print("Si vous voulez le score TF-IDF de tous les mots des fichiers sous forme d'une matrice, taper 6")
-   print("Si vous voulez voir les mots ayant un score de 0, c'est à dire les plus utilisé, taper 7")
+   print("Si vous voulez voir les mots ayant un score de 0, c'est-à-dire les plus utilisés, taper 7")
+   print("Si vous voulez voir les mots ayant un score élevé, c'est-à-dire les moins utilisés, taper 8")
+   print("Si vous voulez voir le mot le plus cité par Chirac, taper 9")
+   print("Si vous voulez voir quel président a cité le mot nation, taper 10")
    num = int(input("Saisir numéro de la fonction : "))
    chemin_repertoire = "./speeches"
    resultats = extraire_noms_presidents(chemin_repertoire)
@@ -65,7 +68,7 @@ if __name__ == '__main__':
 
        mot_plus_cite, nombre_citations = mot_plus_repete_chirac(fichier1, fichier2)
 
-       print(f"Le mot le plus répeté par Chirac est ", mot_plus_cite, " avec ", nombre_citations, "citations.")
+       print("Le mot le plus répeté par Chirac est ", mot_plus_cite, " avec ", nombre_citations, "citations.")
 
    elif num == 10 :
         chemin = "./cleaned"
