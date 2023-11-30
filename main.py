@@ -12,6 +12,7 @@ if __name__ == '__main__':
    print("Si vous voulez voir quel président a cité le mot nation, taper 10")
    num = int(input("Saisir numéro de la fonction : "))
 
+
    directory = "./speeches"
    files_names = list_of_files(directory, "txt")
    print(files_names)
