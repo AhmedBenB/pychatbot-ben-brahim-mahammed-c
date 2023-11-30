@@ -6,6 +6,7 @@ import math
 
 
 def list_of_files(directory, extension):
+
     files_names = []
     for filename in os.listdir(directory):
        if filename.endswith(extension):
