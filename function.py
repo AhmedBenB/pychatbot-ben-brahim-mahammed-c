@@ -153,7 +153,7 @@ def calculer_score_idf(repertoire_corpus):
                 for mot in mots_uniques:
                     nb_documents_contenant_mot[mot] = nb_documents_contenant_mot.get(mot, 0) + 1
 
-    score_idf = {mot: math.log((nb_total_documents + 1) / (nb_documents_contenant_mot[mot] + 1)) for mot in
+    score_idf = {mot: math.log((nb_total_documents) / (nb_documents_contenant_mot[mot]) + 1) for mot in
                  nb_documents_contenant_mot}
 
     return score_idf
@@ -167,22 +167,25 @@ def construire_matrice_tfidf(repertoire_corpus):
     tfidf_matrice = []
 
     for nom_fichier in os.listdir(repertoire_corpus):
-        tfidf_matrice.append(mots_uniques)
+        """tfidf_matrice.append(mots_uniques)"""
         chemin_fichier = os.path.join(repertoire_corpus, nom_fichier)
-
+        contenus = []
         if os.path.isfile(chemin_fichier):
             with open(chemin_fichier, 'r', encoding='utf-8') as fichier:
                 contenu = fichier.read()
-
+                """nom_fichier.split('.')[0]] +"""
+                contenus.append(contenu)
                 scores_tf = compter_motsTF(contenu)
 
-                row = [nom_fichier.split('.')[0]] + [scores_tf.get(mot, 0) * score_idf.get(mot, 0) for mot in
-                                                     mots_uniques]
+                row = [scores_tf.get(mot, 0) * score_idf.get(mot, 0) for mot in mots_uniques]
                 tfidf_matrice.append(row)
-
     tfidf_matrice_transposee = [[tfidf_matrice[j][i] for j in range(len(tfidf_matrice))] for i in
                                 range(len(tfidf_matrice[0]))]
-
+    for i in range(len(tfidf_matrice_transposee)):
+        tfidf_matrice_transposee[i].append(mots_uniques[i])
+        tfidf_matrice.insert(0, contenus)
+    print(len(tfidf_matrice_transposee))
+    print(len(mots_uniques))
     return tfidf_matrice_transposee
 
 
