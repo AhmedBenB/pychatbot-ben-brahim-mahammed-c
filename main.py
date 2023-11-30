@@ -11,12 +11,15 @@ if __name__ == '__main__':
    print("Si vous voulez voir le mot le plus cité par Chirac, taper 9")
    print("Si vous voulez voir quel président a cité le mot nation, taper 10")
    num = int(input("Saisir numéro de la fonction : "))
+
+   directory = "./speeches"
+   files_names = list_of_files(directory, "txt")
+   print(files_names)
+
    chemin_repertoire = "./speeches"
    resultats = extraire_noms_presidents(chemin_repertoire)
    """print(resultats)"""
-   directory = "./speeches"
-   files_names = list_of_files(directory, "txt")
-   """print(files_names)"""
+
    if num == 1 :
        noms_famille_presidents = list(resultats.keys())
        print(noms_famille_presidents)
