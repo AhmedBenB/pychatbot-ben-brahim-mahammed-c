@@ -11,16 +11,12 @@ if __name__ == '__main__':
    print("Si vous voulez voir le mot le plus cité par Chirac, taper 9")
    print("Si vous voulez voir quel président a cité le mot nation, taper 10")
    num = int(input("Saisir numéro de la fonction : "))
-
-
-   directory = "./speeches"
-   files_names = list_of_files(directory, "txt")
-   print(files_names)
-
    chemin_repertoire = "./speeches"
    resultats = extraire_noms_presidents(chemin_repertoire)
    """print(resultats)"""
-
+   directory = "./speeches"
+   files_names = list_of_files(directory, "txt")
+   """print(files_names)"""
    if num == 1 :
        noms_famille_presidents = list(resultats.keys())
        print(noms_famille_presidents)
@@ -80,3 +76,12 @@ if __name__ == '__main__':
         fichiers_avec_occurrences, fichier_max_occurrences, max_occurrences = trouver_occurrences_mot(chemin, mot_a_rechercher)
         print("Le mot ", mot_a_rechercher, " apparaît dans les fichiers suivants :" , fichiers_avec_occurrences)
         print("Le mot ", mot_a_rechercher, " apparaît le plus de fois dans le fichier ", fichier_max_occurrences, " avec",  max_occurrences, " occurrences.")
+
+   elif num== 11 : # a changer en fonction de l'ordre des fonctions a ajouter avant:
+       a = float(input("Saisir une valeur:"))
+       b = float(input("Saisir une valeur:"))
+       pds = float(input("Saisir une valeur:"))
+       result = cos_teta(a, b, pds)
+       print("le cosinus de l'angle θ est", result)
+
+
