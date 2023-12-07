@@ -11,6 +11,7 @@ if __name__ == '__main__':
    print("Si vous voulez voir le mot le plus cité par Chirac, taper 9")
    print("Si vous voulez voir quel président a cité le mot nation, taper 10")
    num = int(input("Saisir numéro de la fonction : "))
+
    chemin_repertoire = "./speeches"
    resultats = extraire_noms_presidents(chemin_repertoire)
    """print(resultats)"""
