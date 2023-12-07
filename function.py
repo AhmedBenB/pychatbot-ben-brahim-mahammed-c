@@ -279,4 +279,25 @@ def trouver_occurrences_mot(repertoire, mot):
     return fichiers_avec_occurrences, fichier_max_occurrences, max_occurrences
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def cos_teta(a,b,pds):
+    norme1 = abs(a)
+    norme2 = abs(b)
+    res = pds/ (norme1 * norme2)
+    return res
+
        
