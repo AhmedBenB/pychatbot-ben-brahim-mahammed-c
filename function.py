@@ -283,7 +283,7 @@ def trouver_occurrences_mot(repertoire, mot):
 
 #première question
 def token (question):
-    Ponctuation=["&","#","'",",",".",";","!","?","^","_","-","`","@","*","§"]
+    Ponctuation=["&","#","'",",",".",";","!","?","^","_","-","`","@","*","§",["'"]]
     mot=""
     for elt in question:
         if 65 <= ord(elt) <= 90:
