@@ -92,7 +92,7 @@ if __name__ == '__main__':
        pds = float(input("Saisir une valeur:"))
        result = cos_teta(a, b, pds)
        print("le cosinus de l'angle θ est", result)
-       print("test")
+       print("test2")
 
 
 
