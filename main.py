@@ -94,3 +94,4 @@ if __name__ == '__main__':
        print("le cosinus de l'angle θ est", result)
 
 
+
