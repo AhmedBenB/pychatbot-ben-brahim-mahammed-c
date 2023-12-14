@@ -79,6 +79,7 @@ if __name__ == '__main__':
 
 #Début du main de la partie II
 
+
    elif num == 11:
        question= input("Saisir une chaine de caractères:")
        resultat= token(question)
