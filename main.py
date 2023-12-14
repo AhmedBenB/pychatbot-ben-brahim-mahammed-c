@@ -84,6 +84,7 @@ if __name__ == '__main__':
        resultat= token(question)
        print("La nouvelle phrase est", resultat)
 
+
    elif num== 12 : # a changer en fonction de l'ordre des fonctions a ajouter avant:
        a = float(input("Saisir une valeur:"))
        b = float(input("Saisir une valeur:"))
