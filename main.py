@@ -77,8 +77,15 @@ if __name__ == '__main__':
         fichiers_avec_occurrences, fichier_max_occurrences, max_occurrences = trouver_occurrences_mot(chemin, mot_a_rechercher)
         print("Le mot ", mot_a_rechercher, " apparaît dans les fichiers suivants :" , fichiers_avec_occurrences)
         print("Le mot ", mot_a_rechercher, " apparaît le plus de fois dans le fichier ", fichier_max_occurrences, " avec",  max_occurrences, " occurrences.")
+      
+#Début partie II
+     
+   elif num == 11:
+       question= input("Saisir une chaine de caractères:")
+       resultat= token(question)
+       print("La nouvelle phrase est", resultat)
 
-   elif num== 11 : # a changer en fonction de l'ordre des fonctions a ajouter avant:
+   elif num== 12 : # a changer en fonction de l'ordre des fonctions a ajouter avant:
        a = float(input("Saisir une valeur:"))
        b = float(input("Saisir une valeur:"))
        pds = float(input("Saisir une valeur:"))
