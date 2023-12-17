@@ -280,6 +280,19 @@ def trouver_occurrences_mot(repertoire, mot):
                     fichier_max_occurrences = nom_fichier
 
     return fichiers_avec_occurrences, fichier_max_occurrences, max_occurrences
+
+def token (question):
+    Ponctuation=["&","#","'",",",".",";","!","?","^","_","-","`","@","*","§",["'"]]
+    mot=""
+    for elt in question:
+        if 65 <= ord(elt) <= 90:
+            mot+= chr(ord(elt)+32)
+        elif elt in Ponctuation or elt in ['"']:
+            mot+=" "
+        else:
+            mot+=elt
+    Lst= list(mot.split())
+    return Lst
     
 def cos_teta(a,b,pds):
     norme1 = abs(a)
