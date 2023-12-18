@@ -10,6 +10,7 @@ if __name__ == '__main__':
    print("Si vous voulez voir les mots ayant un score élevé, c'est-à-dire les moins utilisés, taper 8")
    print("Si vous voulez voir le mot le plus cité par Chirac, taper 9")
    print("Si vous voulez voir quel président a cité le mot nation, taper 10")
+   print("Si vous voulez tokeniser une question sous forme d'une liste, taper 11")
    num = int(input("Saisir numéro de la fonction : "))
 
    chemin_repertoire = "./speeches"
