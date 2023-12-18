@@ -10,9 +10,7 @@ if __name__ == '__main__':
    print("Si vous voulez voir les mots ayant un score élevé, c'est-à-dire les moins utilisés, taper 8")
    print("Si vous voulez voir le mot le plus cité par Chirac, taper 9")
    print("Si vous voulez voir quel président a cité le mot nation, taper 10")
-   print("Si vous voulez tokeniser une question sous forme d'une liste, taper 11")
    num = int(input("Saisir numéro de la fonction : "))
-
    chemin_repertoire = "./speeches"
    resultats = extraire_noms_presidents(chemin_repertoire)
    """print(resultats)"""
@@ -78,19 +76,20 @@ if __name__ == '__main__':
         fichiers_avec_occurrences, fichier_max_occurrences, max_occurrences = trouver_occurrences_mot(chemin, mot_a_rechercher)
         print("Le mot ", mot_a_rechercher, " apparaît dans les fichiers suivants :" , fichiers_avec_occurrences)
         print("Le mot ", mot_a_rechercher, " apparaît le plus de fois dans le fichier ", fichier_max_occurrences, " avec",  max_occurrences, " occurrences.")
-      
-#Début partie II
-     
-   elif num == 11:
-       question= input("Saisir une phrase:")
-       resultat= token(question)
-       print("La nouvelle phrase est", resultat)
 
-   elif num== 12 : # a changer en fonction de l'ordre des fonctions a ajouter avant:
-       a = float(input("Saisir une valeur:"))
-       b = float(input("Saisir une valeur:"))
-       pds = float(input("Saisir une valeur:"))
-       result = cos_teta(a, b, pds)
-       print("le cosinus de l'angle θ est", result)
+   elif num == 11 :
+       corpus = "./cleaned"
+       question = str(input("Entrez une question : "))
+       termes_present = tf_idf_question(corpus, question)
+       print("Termes présents dans le corpus :", termes_present)
 
 
+   elif num == 13 :
+       document_exemple = "nom_du_document.txt"
+       mot_exemple = "mot_a_rechercher"
+       phrase_trouvee = trouver_phrase(document_exemple, mot_exemple)
+
+       if phrase_trouvee:
+           print("Phrase où le mot est trouvé :", phrase_trouvee)
+       else:
+           print("Le mot n'a pas été trouvé dans le document.")
