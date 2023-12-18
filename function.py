@@ -359,36 +359,31 @@ def trouver_phrase(document, mot):
 
     return phrase_finale.strip()
 
-def affiner_reponse(phrase,nom_document,liste,liste2,mot_question):
+def affiner_reponse(phrase, nom_document, liste, liste2, mot_question):
 
-    indice=0
-    for i in range(len(liste)):
-        if nom_document==liste[i]:
-            indice=i
-            break
-    if indice==1 or indice==2:
-        president=liste2[0]
-    elif indice==3:
-        president=liste2[1]
-    elif indice==4:
-        president=liste2[2]
-    elif indice==5:
-        president=liste2[3]
-    elif indice==6 or indice==7:
-        president=liste2[4]
+    indice = liste.index(nom_document)
+    
+    if indice == 1 or indice == 2:
+        president = liste2[0]
+    elif indice == 3:
+        president = liste2[1]
+    elif indice == 4:
+        president = liste2[2]
+    elif indice == 5:
+        president = liste2[3]
+    elif indice == 6 or indice == 7:
+        president = liste2[4]
     else:
-        president=liste2[5]
+        president = liste2[5]
 
     mot_question_dico = {
         "Comment": "Après analyse, ",
         "Pourquoi": "Car, ",
         "Peux-tu": "Oui, bien sûr! ",
-        "Quand":president+"Lors de son discour: " ,
-        "Qui": president+"lors de son discour: "
+        "Quand": president + "Lors de son discours: ",
+        "Qui": president + "Lors de son discours: "
     }
 
-    if mot_question[0] in mot_question_dico:
-        reponse=mot_question_dico[mot_question[0]]+phrase+"."
-    else:
-        reponse=phrase+"."
+    reponse = mot_question_dico.get(mot_question[0], "") + phrase + "."
+
     return reponse
