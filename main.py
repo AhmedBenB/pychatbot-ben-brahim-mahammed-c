@@ -81,7 +81,7 @@ if __name__ == '__main__':
 #Début partie II
      
    elif num == 11:
-       question= input("Saisir une chaine de caractères:")
+       question= input("Saisir une phrase:")
        resultat= token(question)
        print("La nouvelle phrase est", resultat)
 
