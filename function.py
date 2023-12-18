@@ -315,3 +315,80 @@ def cos_teta(a,b,ps):
     return res
 def calcul_similarite(vecteur1,vecteur2):
     return produit_scalaire_vecteur(vecteur1,vecteur2)/(norme(vecteur1)*norme(vecteur2))
+
+def calcul_document_plus_pertinent(matrice,vecteur,liste):
+    similarite_max=0
+    indice=0
+    for i in range(1,len(matrice)):
+        similarite=calcul_similarite(vecteur[1],matrice[i])
+        if similarite>similarite_max:
+            similarite_max=similarite
+            indice=i
+    indice=indice-1
+    return liste[indice]
+
+def generateur_reponse(vecteur):
+    max_tf_idf=0
+    mot=""
+    for i in range(0,len(vecteur[0])):
+        if max_tf_idf<vecteur[1][i]:
+            max_tf_idf=vecteur[1][i]
+            mot=vecteur[0][i]
+    return mot
+
+def trouver_phrase(document, mot):
+
+    with open(f"cleaned/{document}", 'r', encoding="UTF-8") as file:
+        contenu_cleaned = file.read()
+
+    mots_contenu = contenu_cleaned.split()
+
+    try:
+        indice_mot = mots_contenu.index(mot)
+    except ValueError:
+        return ""
+
+    with open(f"speeches/{document}", 'r', encoding='UTF-8') as file2:
+        contenu_original = file2.read()
+
+        indice_fin = contenu_original.find(".", indice_mot)
+
+        indice_debut = contenu_original.rfind(".", 0, indice_mot)
+
+        phrase_finale = contenu_original[indice_debut + 1:indice_fin + 1]
+
+    return phrase_finale.strip()
+
+def affiner_reponse(phrase,nom_document,liste,liste2,mot_question):
+
+    indice=0
+    for i in range(len(liste)):
+        if nom_document==liste[i]:
+            indice=i
+            break
+    if indice==1 or indice==2:
+        president=liste2[0]
+    elif indice==3:
+        president=liste2[1]
+    elif indice==4:
+        president=liste2[2]
+    elif indice==5:
+        president=liste2[3]
+    elif indice==6 or indice==7:
+        president=liste2[4]
+    else:
+        president=liste2[5]
+
+    mot_question_dico = {
+        "Comment": "Après analyse, ",
+        "Pourquoi": "Car, ",
+        "Peux-tu": "Oui, bien sûr! ",
+        "Quand":president+"Lors de son discour: " ,
+        "Qui": president+"lors de son discour: "
+    }
+
+    if mot_question[0] in mot_question_dico:
+        reponse=mot_question_dico[mot_question[0]]+phrase+"."
+    else:
+        reponse=phrase+"."
+    return reponse
