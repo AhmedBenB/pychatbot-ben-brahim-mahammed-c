@@ -89,11 +89,22 @@ if __name__ == '__main__':
 
 
    elif num == 13 :
-       document_exemple = "nom_du_document.txt"
-       mot_exemple = "mot_a_rechercher"
+       document_exemple = "./cleaned"
+       mot_exemple = tf_idf_question.termes_present
        phrase_trouvee = trouver_phrase(document_exemple, mot_exemple)
 
        if phrase_trouvee:
            print("Phrase où le mot est trouvé :", phrase_trouvee)
        else:
            print("Le mot n'a pas été trouvé dans le document.")
+
+   elif num == 14 :
+       phrase = input("Entrez la phrase : ")
+       nom_document = "./cleaned"
+       liste = ['Chirac1', 'Chirac2', 'Hollande', 'Macron', 'Mitterrand1', 'Mitterrand2', 'Sarkozy']
+       liste2 = ['Chirac', 'dEstaing', 'Hollande', 'Macron', 'Mitterrand', 'Sarkozy']
+       mot_question = input("Votre question ici : ")
+
+       resultat = affiner_reponse(phrase, nom_document, liste, liste2, mot_question)
+
+       print(resultat)
