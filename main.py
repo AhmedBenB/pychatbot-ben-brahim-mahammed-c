@@ -10,6 +10,10 @@ if __name__ == '__main__':
    print("Si vous voulez voir les mots ayant un score élevé, c'est-à-dire les moins utilisés, taper 8")
    print("Si vous voulez voir le mot le plus cité par Chirac, taper 9")
    print("Si vous voulez voir quel président a cité le mot nation, taper 10")
+   print("Si vous voulez tokeniser une question sous forme d'une liste, taper 11")
+   print("Si vous voulez calculer la similarité, taper 12")
+   print("Pour teouver les mots de la questions présent dans les documents, taper 13")
+   print("Pour affiner la réponse, taper 14")
    num = int(input("Saisir numéro de la fonction : "))
    chemin_repertoire = "./speeches"
    resultats = extraire_noms_presidents(chemin_repertoire)
